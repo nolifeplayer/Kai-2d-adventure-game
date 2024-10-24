@@ -13,7 +13,7 @@ public class PlayerController : MonoBehaviour
         LeftAction.Enable();  
         MoveAction.Enable();
         //QualitySettings.vSyncCount = 0;
-        //Application.targetFrameRate = 80;  
+        //Application.targetFrameRate = 380;  
     }
 
     // Update is called once per frame
