@@ -5,12 +5,12 @@ using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour
 {   
-    public InputAction LeftAction;
+    //public InputAction LeftAction;
     public InputAction MoveAction;
     // Start is called before the first frame update
     void Start()
     {
-        LeftAction.Enable();  
+        //LeftAction.Enable();  
         MoveAction.Enable();
         //QualitySettings.vSyncCount = 0;
         //Application.targetFrameRate = 380;  
