@@ -29,8 +29,8 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-    move = MoveAction.ReadValue<Vector2>();
-     Debug.Log(move);
+        move = MoveAction.ReadValue<Vector2>();
+        Debug.Log(move);
        
         
     }
@@ -38,13 +38,14 @@ public class PlayerController : MonoBehaviour
 
     void FixedUpdate()
     {
-    Vector2 position = (Vector2)rigidbody2d.position + move * 3.0f * Time.deltaTime;
-    rigidbody2d.MovePosition(position);
+        Vector2 position = (Vector2)rigidbody2d.position + move * speed * Time.deltaTime;
+        rigidbody2d.MovePosition(position);
         
     }
-    void ChangeHealth (int amount)
+    
+    void ChangeHealth(int amount)
     {
-    currentHealth = Mathf.Clamp(currentHealth+ amount, 0,maxHealth);
-    Debug.Log(currentHealth + "/" + maxHealth);
+        currentHealth = Mathf.Clamp(currentHealth + amount, 0, maxHealth);
+        Debug.Log(currentHealth + "/" + maxHealth);
     }
 }
