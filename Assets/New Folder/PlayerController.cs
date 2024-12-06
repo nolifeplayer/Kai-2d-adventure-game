@@ -37,7 +37,7 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         move = MoveAction.ReadValue<Vector2>();
-       // Debug.Log(move);
+      UIHealthBar.instance.SetValue(currentHealth/(float)maxHealth);
 
         if (isInvincible)
         {
