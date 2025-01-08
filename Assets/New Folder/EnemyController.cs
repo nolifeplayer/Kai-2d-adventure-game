@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class EnemyController : MonoBehaviour
 {
+    Animator animator;
+    
     //Public variables
     public float speed;
     public bool vertical;
@@ -19,6 +21,7 @@ public class EnemyController : MonoBehaviour
     {
         rigidbody2d = GetComponent<Rigidbody2D>();
         timer = changeTime;
+        animator = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -42,10 +45,14 @@ public class EnemyController : MonoBehaviour
     if (vertical)
     {
         position.y = position.y + speed * direction * Time.deltaTime;
+         animator.SetFloat("Move X", 0);
+         animator.SetFloat("MOve Y", direction);
     }   
     else
     {
         position.x = position.x + speed *  direction * Time.deltaTime;
+        animator.SetFloat("Move X", direction);
+        animator.SetFloat("Move Y", 0);
     }
     
     rigidbody2d.MovePosition(position);
@@ -61,5 +68,4 @@ public class EnemyController : MonoBehaviour
         player.ChangeHealth(-1);
     }
     }
-
 }
