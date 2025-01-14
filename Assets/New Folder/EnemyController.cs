@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class EnemyController : MonoBehaviour
 {
+    bool broken = true;
     Animator animator;
     
     //Public variables
@@ -15,6 +16,10 @@ public class EnemyController : MonoBehaviour
     Rigidbody2D rigidbody2d;
     float timer;
     int direction = 1;
+
+    int health = 5;
+
+
     
     // Start is called before the first frame update
     void Start()
@@ -40,22 +45,29 @@ public class EnemyController : MonoBehaviour
     //FixedUpdate has the same call rate as the physics system
     void FixedUpdate()
     {
+        if(!broken)
+        {
+            return;
+        }
+        
         Vector2 position = rigidbody2d.position;
     
-    if (vertical)
-    {
-        position.y = position.y + speed * direction * Time.deltaTime;
-         animator.SetFloat("Move X", 0);
-         animator.SetFloat("MOve Y", direction);
-    }   
-    else
-    {
-        position.x = position.x + speed *  direction * Time.deltaTime;
-        animator.SetFloat("Move X", direction);
-        animator.SetFloat("Move Y", 0);
-    }
+        if (vertical)
+        {
+            position.y = position.y + speed * direction * Time.deltaTime;
+            animator.SetFloat("Move X", 0);
+            animator.SetFloat("MOve Y", direction);
+        }   
+        else
+        {
+            position.x = position.x + speed *  direction * Time.deltaTime;
+            animator.SetFloat("Move X", direction);
+            animator.SetFloat("Move Y", 0);
+        }
+        
+        rigidbody2d.MovePosition(position);
+
     
-    rigidbody2d.MovePosition(position);
     
     }
 
@@ -63,9 +75,21 @@ public class EnemyController : MonoBehaviour
     {
        PlayerController player = other.gameObject.GetComponent<PlayerController>();
     
-    if (player != null)
-    {
-        player.ChangeHealth(-1);
+        if (player != null)
+        {
+            player.ChangeHealth(-1);
+        }
     }
+
+    public void Fix()
+    {
+        broken = false;
+        
+        health--;
+        if(health < 1 )
+        {
+            Destroy(gameObject);
+        }
+        
     }
 }
