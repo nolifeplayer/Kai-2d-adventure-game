@@ -1,0 +1,30 @@
+{
+    "UxmlGuid": "229db85ed25804b99b39e6a41d2385bc",
+    "UxmlPath": "Assets/NPCDialogue.uxml",
+    "CanvasX": -15,
+    "CanvasY": -23,
+    "CanvasWidth": 526,
+    "CanvasHeight": 462,
+    "MatchGameView": false,
+    "ZoomScale": 0.25,
+    "PanOffset": {
+        "x": 183.96661376953126,
+        "y": 517.8333129882813
+    },
+    "ColorModeBackgroundOpacity": 1.0,
+    "ImageModeCanvasBackgroundOpacity": 1.0,
+    "CameraModeCanvasBackgroundOpacity": 1.0,
+    "EnableCanvasBackground": false,
+    "CanvasBackgroundMode": 0,
+    "CanvasBackgroundColor": {
+        "r": 0.0,
+        "g": 0.0,
+        "b": 0.0,
+        "a": 255.0
+    },
+    "CanvasBackgroundImage": {
+        "instanceID": 0
+    },
+    "CanvasBackgroundImageScaleMode": 1,
+    "CanvasBackgroundCameraName": ""
+}
