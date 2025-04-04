@@ -6,7 +6,7 @@ public class EnemyController : MonoBehaviour
 {
     bool broken = true;
     Animator animator;
-    
+    AudioSource audioSource;
     //Public variables
     public float speed;
     public bool vertical;
@@ -27,6 +27,7 @@ public class EnemyController : MonoBehaviour
         rigidbody2d = GetComponent<Rigidbody2D>();
         timer = changeTime;
         animator = GetComponent<Animator>();
+        audioSource = GetComponent <AudioSource>();
     }
 
     // Update is called once per frame
@@ -90,6 +91,6 @@ public class EnemyController : MonoBehaviour
         {
             Destroy(gameObject);
         }
-        
+        audioSource.Stop();
     }
 }

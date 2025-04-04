@@ -5,8 +5,10 @@ using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour
 {   
+    public AudioClip shootSound;
+    public AudioClip hurtSound;
     public GameObject projectilePrefab;
-    
+    AudioSource audioSource;
     public InputAction talkAction;
     Animator animator;
     Vector2 moveDirection = new Vector2(1,0);
@@ -35,9 +37,15 @@ public class PlayerController : MonoBehaviour
      rigidbody2d = GetComponent<Rigidbody2D>();
      currentHealth= maxHealth;
      animator = GetComponent<Animator>();
+     audioSource = GetComponent<AudioSource>();
      
      //QualitySettings.vSyncCount = 0;
     //Application.targetFrameRate = 380; 
+    }
+
+    public void PlaySound(AudioClip clip)
+    {
+        audioSource.PlayOneShot(clip);
     }
 
     // Update is called once per frame
@@ -91,21 +99,22 @@ public class PlayerController : MonoBehaviour
             {
                 return;
             }
-        
+            PlaySound(hurtSound);
             isInvincible = true;
             damageCooldown = timeInvincible;
         }
         currentHealth = Mathf.Clamp(currentHealth + amount, 0, maxHealth);
+        UIHealthBar.instance.SetValue(currentHealth/(float)maxHealth);
         Debug.Log(currentHealth + "/" + maxHealth);
     
     }
 
     void Launch()
-    {
+    {   
         GameObject projectileObject = Instantiate(projectilePrefab, rigidbody2d.position + Vector2.up * 0.5f, Quaternion.identity);
         Projectile projectile = projectileObject.GetComponent<Projectile>();
         projectile.Launch(moveDirection, 300);
-        
+        PlaySound(shootSound);
         animator.SetTrigger("Launch");
     }
     

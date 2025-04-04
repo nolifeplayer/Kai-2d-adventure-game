@@ -99,6 +99,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   projectilePrefab: {fileID: 5967585520812760665, guid: 2d162e1eeb3f541b8be1626c4da4ce2e, type: 3}
+  talkAction:
+    m_Name: Talk
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: 7e48eb06-3c43-4520-a171-c67e487d3d6c
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings: []
+    m_Flags: 0
   MoveAction:
     m_Name: Move
     m_Type: 0

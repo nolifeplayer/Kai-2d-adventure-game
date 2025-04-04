@@ -15,27 +15,27 @@
                 "m_VisualTreeAssetBackup": {
                     "instanceID": 0
                 },
-                "m_OpenendVisualTreeAssetOldPath": "Assets/NPCDialogue.uxml",
+                "m_OpenendVisualTreeAssetOldPath": "Assets/GameUI.uxml",
                 "m_VisualTreeAsset": {
                     "fileID": 9197481963319205126,
-                    "guid": "229db85ed25804b99b39e6a41d2385bc",
+                    "guid": "651e40a3820ab4ac7bed8746fec3da75",
                     "type": 3
                 },
                 "m_ActiveStyleSheet": {
                     "instanceID": 0
                 },
                 "m_Settings": {
-                    "UxmlGuid": "229db85ed25804b99b39e6a41d2385bc",
-                    "UxmlPath": "Assets/NPCDialogue.uxml",
-                    "CanvasX": -15,
-                    "CanvasY": -23,
-                    "CanvasWidth": 526,
-                    "CanvasHeight": 462,
+                    "UxmlGuid": "651e40a3820ab4ac7bed8746fec3da75",
+                    "UxmlPath": "Assets/GameUI.uxml",
+                    "CanvasX": 0,
+                    "CanvasY": 0,
+                    "CanvasWidth": 446,
+                    "CanvasHeight": 630,
                     "MatchGameView": false,
-                    "ZoomScale": 0.25,
+                    "ZoomScale": 0.5,
                     "PanOffset": {
-                        "x": 183.96661376953126,
-                        "y": 517.8333129882813
+                        "x": 181.0,
+                        "y": 364.33331298828127
                     },
                     "ColorModeBackgroundOpacity": 1.0,
                     "ImageModeCanvasBackgroundOpacity": 1.0,

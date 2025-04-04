@@ -13,6 +13,7 @@ public class UIHandler : MonoBehaviour
    private VisualElement m_NonPlayerDialogue;
    private Label dialogueLabel;
    private float m_TimerDisplay;
+   UIDocument uiDocument ;
 
 
    // Awake is called when the script instance is being loaded (in this situation, when the game scene loads)
@@ -24,7 +25,7 @@ public class UIHandler : MonoBehaviour
    // Start is called before the first frame update
    private void Start()
    {
-       UIDocument uiDocument = GetComponent<UIDocument>();
+       uiDocument = GetComponent<UIDocument>();
 
 
 
